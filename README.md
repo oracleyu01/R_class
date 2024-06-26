@@ -22,7 +22,7 @@
 
 - **예제5. 데이터를 검색할 줄 알아야해요 !**: 📄 [노트](https://github.com/oracleyu01/R_class/blob/main/%E2%96%A3%20%EC%98%88%EC%A0%9C5.%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EA%B2%80%EC%83%89%ED%95%98%EA%B8%B0.txt)
 
-- **예제6. R 에서 사용하는 연산자 3가지를 알아야해 !**: 📄 [노트](https://github.com/oracleyu01/R_class/blob/main/%E2%96%A3%20%EC%98%88%EC%A0%9C6.%20R%20%EC%97%B0%EC%82%B0%EC%9E%90%203%EA%B0%80%EC%A7%80.txt)
+- **예제6. R 에서 사용하는 연산자 3가지를 알아야해요 !**: 📄 [노트](https://github.com/oracleyu01/R_class/blob/main/%E2%96%A3%20%EC%98%88%EC%A0%9C6.%20R%20%EC%97%B0%EC%82%B0%EC%9E%90%203%EA%B0%80%EC%A7%80.txt)
 
 - **예제7. 연결 연산자를 알아야해요 !**: 📄 [노트](https://github.com/oracleyu01/R_class/blob/main/%E2%96%A3%20%EC%98%88%EC%A0%9C7.%20%EC%97%B0%EA%B2%B0%20%EC%97%B0%EC%82%B0%EC%9E%90%EB%A5%BC%20%EC%95%8C%EC%95%84%EC%95%BC%ED%95%B4%EC%9A%94%20!.txt)
 
