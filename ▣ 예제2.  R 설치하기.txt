@@ -1,0 +1,26 @@
+▣ 예제2.  R 설치하기 
+
+  1. 기본 R 프로그램   <---  오라클
+  2.  R studio  <-----  SQL developer 같은 툴 
+
+ 구글에 가서 R 설치 
+
+ R 공식 홈페이지: https://www.r-project.org
+
+
+c 드라이브 밑에 data 라는 폴더를 만들고 거기에 emp.csv  를 가져다두세요
+
+> setwd("c:\\data")
+> emp <- read.csv("emp.csv", header=T)
+> emp
+
+
+ R 스튜디오 홈페이지: https://www.rstudio.com
+
+# 문제1. emp 데이터 프레임에 이름과 월급을 출력하시오 
+
+setwd("c:\\data")
+emp <- read.csv("emp.csv", header=T)
+emp
+
+emp[  ,c("ename","sal")]

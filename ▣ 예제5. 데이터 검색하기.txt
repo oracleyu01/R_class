@@ -1,0 +1,17 @@
+▣ 예제5. 데이터 검색하기 
+
+문법 :    데이터 프레임에서 데이터 검색하는 문법
+
+>  emp[ 행 ,  열 ]
+
+>  emp[          , c("ename","sal") ] 
+                      ↑ 
+                  combine
+
+>  emp[  emp$sal >= 3000,  c("ename","sal","job") ] 
+
+문제1.  직업이 SALESMAN 인 사원들의 이름과 월급과 직업을 출력하시오 !
+
+답: 
+>  emp[  emp$job=="SALESMAN",  c("ename","sal","job") ] 
+

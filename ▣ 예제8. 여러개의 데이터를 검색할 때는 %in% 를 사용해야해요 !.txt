@@ -1,0 +1,24 @@
+▣ 예제8. 여러개의 데이터를 검색할 때는 %in% 를 사용해야해요 !
+
+ 오라클의 기타 비교연산자 4가지와 R  과의 비교  !
+
+                  SQL                        vs               R  
+
+ 1.               in                                           %in%
+ 2.               like                                          grep
+ 3.              is  null                                       is.na
+ 4.            between ..  and                    (emp$sal >= 1000 ) & (emp$sal <=3000)
+
+
+■ 실습예제1. 직업이 SALESMAN , ANALYST 인 사원들의 이름과 월급과 직업을 출력하시오
+
+답: emp[ emp$job  %in% c("SALESMAN", "ANALYST"), c("ename","sal","job") ]
+
+문제5.  부서번호가 10번, 20번인 사원들의 이름과 월급과 부서번호를 출력하시오 !
+
+답:  emp[  emp$deptno  %in% c(10, 20),  c("ename","sal","deptno") ]
+
+문제6. 부서번호가 10번, 20번이 아닌 사원들의 이름과 월급과 부서번호를 출력하시오 !
+
+답:  emp[ ! emp$deptno  %in% c(10, 20),  c("ename","sal","deptno") ]
+

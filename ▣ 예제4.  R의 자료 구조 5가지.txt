@@ -1,0 +1,14 @@
+▣ 예제4.  R의 자료 구조 5가지
+
+관련그림 : https://cafe.daum.net/oracleoracle/Sotv/4
+
+1. vector : 같은 데이터 타입을 갖는 1차원 배열구조
+2. matrix : 같은 데이터 타입을 갖는 2차원 배열구조
+3. array   : 같은 데이터 타입을 갖는 다차원 배열구조
+4. data frame :  서로 다른 데이터 타입을 갖는 2차원 배열구조(오라클의 테이블)
+5. list :  서로 다른 데이터 구조(vector, matrix, array, dataframe) 인 데이터 타입이 중첩된 구조 
+
+■ 실습예제1.  emp 데이터 프레임의 구조를 확인하시오 !
+
+str(emp)
+

@@ -1,0 +1,42 @@
+▣ 예제7. 연결 연산자를 알아야해요 !
+
+ R 에서의 연결 연산자는   paste    입니다.  
+
+문법:  
+SQL>  select  ename  ||  ' 의 직업은 '  ||  job
+           from  emp;
+
+R>  paste( emp$ename , ' 의 직업은 ' , emp$job  )
+
+오라클처럼 결과를 예쁘게 보고 싶으면 패키지를 설치를 해야합니다.
+
+1. data.table 패키지를 설치합니다.
+
+install.packages("data.table")
+
+2. data.table 패키지를 사용하겠다고 지정합니다.
+
+library(data.table)
+
+3. data.table 을 이용해서 이름과 직업을 출력합니다.
+
+data.table( emp$ename, ' 의 직업은 ', emp$job )
+
+4. data.table 패키지에 대한 사용 메뉴얼을 여시오
+
+?data.table
+
+문제4.  아래의 SQL을 R 로 구현하시오 (쪽지시험)
+
+SQL>  select  ename  ||  ' 의 직업은 '  ||  job
+           from  emp
+           where  job ='SALESMAN';
+
+답:  
+result <-  emp[ emp$job=='SALESMAN', c("ename","job") ]
+result 
+
+str(result)  # 데이터 프레임입니다. 
+
+library(data.table)
+data.table( result$ename, ' 의 직업은 ' , result$job )
