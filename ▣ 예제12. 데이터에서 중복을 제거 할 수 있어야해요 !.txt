@@ -1,0 +1,37 @@
+
+▣ 예제12. 데이터에서 중복을 제거 할 수 있어야해요 !
+
+       SQL              vs                 R
+
+     distinct                             unique
+
+# 직업을 출력하는데 중복을 제거해서 출력하시오 !
+
+ unique(emp$job) 
+
+# 위의 결과를 오라클 스타일로 보고 싶다면 ?
+ 
+ library(data.table)
+ data.table( '직업' = unique(emp$job) ) 
+
+문제18.  직업이 SALESMAN 인 사원들의 부서번호를 출력하는데 중복을 제거해서
+            출력하시오 !
+
+result <- emp[ emp$job=='SALESMAN', c("deptno") ]
+unique(result)
+
+문제19.  중고차(usedcars.csv) 를 불러와서  car 라는 데이터 프레임을 생서하시오
+
+ 데이터 있는곳 :  https://cafe.daum.net/oracleoracle/Soei/11
+
+ car <- read.csv("usedcars.csv", header=T)
+ head(car) 
+
+문제20. (빅분기 문제) 중고차(usedcar.sv) 에서 모델명을 출력하는데 중복을 제거해서
+           출력하시오 !
+
+a <- unique(car$model)
+print(a)
+
+※ 시험 볼때는 print 를 꼭 써주셔야합니다.
+

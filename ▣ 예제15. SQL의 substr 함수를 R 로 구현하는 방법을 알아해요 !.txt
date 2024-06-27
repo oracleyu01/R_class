@@ -1,0 +1,27 @@
+
+▣ 예제15. SQL의 substr 함수를 R 로 구현하는 방법을 알아해요 !
+
+#문법:  이름의 첫번째 철자가 S 로 시작하는 사원의 이름과 월급을 출력하시오 !
+
+SQL> select  ename, sal
+          from emp
+          where  substr(ename, 1, 1 ) ='S';
+
+R> emp[ substr( emp$ename, 1, 1 )=='S' , c("ename", "sal") ]
+
+※        SQL                          vs                    R
+
+SQL의 substr(컬럼, 시작인덱스, 시작 인덱스로 부터 몇개 를 가져올지 건수)
+R 의 substr( 컬럼, 시작 인덱스 번호, 끝 인덱스 번호 )
+
+substr( emp$ename, 1, 1 )
+
+문제30.  emp20 테이블에서 성씨가 김씨인 학생들의 이름과 나이를 출력하시오!
+
+SQL> select  ename, age
+          from  emp20
+          where  substr( ename, 1, 1 )='김';
+
+R>  emp20 <- read.csv("emp20.csv", header=T, fileEncoding="euc-kr") 
+
+R>  emp20[ substr(emp20$ename,1,1)=='김', c("ename", "age") ] 

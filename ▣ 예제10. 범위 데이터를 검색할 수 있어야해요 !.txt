@@ -1,0 +1,38 @@
+
+▣ 예제10. 범위 데이터를 검색할 수 있어야해요 !
+
+ 월급이 1000 에서 3000 사이인 사원들의 이름과 월급을 출력하시오 ! 
+
+ setwd("c:\\data")
+ emp <- read.csv("emp.csv", header=T)
+ emp[ (emp$sal >= 1000) & (emp$sal <= 3000), c("ename","sal") ]
+
+문제9. 월급이 1000 에서 3000 사이가 아닌 사원들의 이름과 월급을 출력하시오 !
+
+emp[ ! ( (emp$sal >= 1000) & (emp$sal <= 3000) ), c("ename","sal") ]
+
+또는
+
+emp[ (emp$sal < 1000) | ( emp$sal > 3000 ), c("ename","sal") ]
+
+문제10. (빅분기 시험용 데이터)  미국 보스톤 집값 데이터 boston 이라는
+          데이터 프레임으로 생성하시오 !
+
+데이터 있는곳 : https://cafe.daum.net/oracleoracle/Soei/25
+
+boston <- read.csv("boston.csv", header=T)
+boston
+
+문제11. (빅분기 시험용)  보스톤 집값(price)이  10 ~ 30 사이의 해당하는
+           데이터가 전부 몇건인지 출력하시오 ! (10과 30도 포함시키세요)
+
+# 컬럼명만 추출하기
+
+names(boston)
+
+# 집값이 10~30 사이인 데이터 추출하기
+
+cnt <- boston[ (boston$price >= 10) & (boston$price <=30 ) , c("id") ]
+print(length(cnt))
+
+398

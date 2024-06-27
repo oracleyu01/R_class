@@ -1,0 +1,77 @@
+
+▣ 예제13. 데이터를 정렬해서 출력할 수 있어야해요 !
+
+        SQL                    vs                         R
+
+     order  by                               dataframe 에 내장된 order 함수를 사용
+
+  좀더 쉽게 하려면 doBy 패키지를 설치하고  orderBy 함수를 이용해서 정렬합니다.
+
+문법:  이름과 월급을 출력하는데 월급이 높은 사원부터 출력하시오 !
+
+ emp[  order( emp$sal, decreasing=T ), c("ename","sal") ]
+
+문제21.  emp20 에서 이름과 나이를 출력하는데 나이가 높은 학생부터 출력하시오 !
+
+ emp20[  order( emp20$age, decreasing=T ), c("ename","age") ]
+
+문제22. 내가 현재 접속한 R 세션에서 활성화 되어있는 변수 리스트를 출력하시오!
+
+ ls()
+
+문제23.  emp20 변수를 현재 작업공간에서 지워버리고 싶다면 ?
+
+ rm(emp20)
+ ls()
+
+문제24.  R 을 사용하다보면 기존에 남아있는 변수로 인해서 데이터 분석 결과가
+           잘못 나오는 경우가 있습니다. 그럴때는 데이터 분석하기에 앞서서
+           변수들을 모두 지우고 코드를 시작할 필요가 있습니다. 변수를 모두 지우는
+           명령어는 무엇인가요 ?
+
+ rm( list = ls() )
+ ls()
+
+#문법:  doBy 패키지를 설치하고 사용해보겠습니다. 
+
+install.packages("doBy")
+library(doBy)
+
+setwd("c:\\data")
+emp <- read.csv("emp.csv", header=T)
+emp20 <- read.csv("emp20.csv", header=T, fileEncoding="euc-kr")
+
+# 사원 테이블에서 이름과 월급을 출력하는데 월급이 높은 사원부터 출력하시오
+library(doBy)
+ordrBy( ~ -sal, emp[     , c("ename","sal") ] )
+
+설명:  ~ -sal :  높은것부터 출력
+         ~ sal :  낮은것부터 출력
+
+만약 doBy 패키지를 이용하지 않고 order 내장함수로 직업이 SALESMAN인
+사원들의 이름과 월급을 출력하는데 월급이 높은 사원부터 출력하는 결과를 
+뽑으려면 코드가 여러줄이 필요합니다. 
+
+문제25.  직업이 SALESMAN 인 사원들의 이름과 월급을 출력하는데
+            월급이 높은 사원부터 출력하시오 !
+
+library(doBy)
+orderBy(  ~ -sal, emp[ emp$job=='SALESMAN', c("ename", "sal") ] ) 
+
+문제26. 이번에는 doBy 패키지 없이 문제25번을 수행하시오 !
+          ( 빅분기 시험 환경에서는 따로 패키지를 설치 할 수 없고 
+            출제자가 미리 설치해놓은 패키지만 사용할 수 있습니다.)
+
+a <- emp[ emp$job=="SALESMAN", c("ename", "sal", "job") ]
+a
+str(a)  # 데이터 프레임입니다. 
+
+a[ order( a$sal, decreasing=T ), c("ename", "sal") ] 
+
+문제27.  emp20 테이블에서 나이가 20대인 학생들의 이름과 나이를 출력하는데
+            나이가 높은 학생부터 출력하시오 !
+
+ a<-emp20[ grep( "^2", emp20$age), c("ename","age")]
+
+ a[ order(a$age, decreasing = T), c("ename","age")]
+
